@@ -10,7 +10,7 @@ export_path = '../Csv/'
 
 
 # 1. Import data
-pwt = pd.read_excel('https://www.rug.nl/ggdc/docs/pwt90.xlsx',sheet_name='Data')
+pwt = pd.read_excel('https://www.rug.nl/ggdc/docs/pwt91.xlsx',sheet_name='Data')
 
 
 # 2. Manage data
