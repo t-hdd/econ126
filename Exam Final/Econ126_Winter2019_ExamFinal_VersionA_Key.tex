@@ -1,0 +1,155 @@
+\documentclass[11pt,fleqn]{article}
+\renewcommand{\baselinestretch}{1.3}
+\usepackage{hyperref,harvard,amsmath,amssymb,lscape,graphicx,setspace,indentfirst,cancel,amsthm,color,soul,pgfplots}
+%\usepackage{amsfonts,latexsym,eurosym}
+\bibliographystyle{aer}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Exam details
+\newcommand{\course}{Econ 126: Computational Macroeconomics}
+\newcommand{\term}{Winter 2019}
+\newcommand{\professor}{Jenkins}
+\newcommand{\examdate}{March 19, 2019}
+\newcommand{\examtitle}{\textbf{Final Exam: Version A}}
+\newcommand{\instructions}{Use complete sentences and label all diagrams carefully. You may use a calculator but you may not use any other outside materials: smartphones, scratch paper, etc. There are \total{pnts} points possible.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Other setup commands
+
+\pdfpagewidth 8.5in
+\pdfpageheight 11in
+\topmargin 0in
+\headheight 0in
+\headsep 0in
+\textheight 9in
+\textwidth 6.5in
+\oddsidemargin 0in
+\evensidemargin 0in
+\headheight 0in
+\headsep 0in
+
+\newcommand{\D}{\displaystyle}
+\newcommand{\E}{\begin{eqnarray*}}
+\newcommand{\F}{\end{eqnarray*}}
+\newcommand{\EE}{\begin{eqnarray}}
+\newcommand{\FF}{\end{eqnarray}}
+\newcommand{\IZ}{\begin{itemize}}
+\newcommand{\ZI}{\end{itemize}}
+\newcommand{\EN}{\begin{enumerate}}
+\newcommand{\NE}{\end{enumerate}}
+\newcommand{\itemc}{\item[$\circ$]}
+\newcommand{\IZdash}{\begin{itemize} \renewcommand{\labelitemi}{-}}
+\newcommand{\tn}{\textnormal}
+
+
+
+\pgfplotsset{height =7cm,compat=1.7,width=7cm,
+    standard/.style={
+    	unit vector ratio*=1 1 1,
+        axis x line=middle,
+        axis y line=middle,
+        enlarge x limits=0.15,
+        enlarge y limits=0.15,
+        every axis x label/.style={at={(current axis.right of origin)},anchor=north west},
+        every axis y label/.style={at={(current axis.above origin)},anchor=north east}
+    }
+}
+\newcommand{\drawge}{-- (rel axis cs:1,0) -- (rel axis cs:1,1) -- (rel axis cs:0,1) \closedcycle}
+\newcommand{\drawle}{-- (rel axis cs:1,1) -- (rel axis cs:1,0) -- (rel axis cs:0,0) \closedcycle}
+
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows}
+
+
+
+\newcommand{\scenario}[2]{\begin{fullwidth} \textbf{Use the following information to answer the next #1 questions.} #2  \end{fullwidth}}
+
+
+\onehalfspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{table}[ht]
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+\course & %Name:\rule{50mm}{.1pt}%%Assignment \#\asgnum
+
+\\
+\term: \professor & %ID:\rule{50mm}{.1pt}
+\end{tabular*}
+\end{table}
+
+\begin{center}
+\examtitle~\textbf{Key}
+\end{center}
+
+
+\
+
+
+\EN
+\item
+	\EN
+	\item An AR(1) process is stable if a one-time shock to $\epsilon_{t+1}$ does not cause the process to tend toward infinity in absolute value.
+	\item $|\rho|<1$ or $-1<\rho<1$
+	\item
+		\EN
+		\item Process \#1. The processes smoothly returns to 0.
+		\item Process \#3. The processes oscillates between positive and negative values, but smoothly returns to 0 in absolute value.
+		\item Process \#2. The processes oscillates between positive and negative values and tends toward infinity in absolute value.
+		\NE
+	
+	\NE
+
+\
+
+\item
+	\EN
+	\item The maximization problem in terms of only $K_1$:
+		\EE
+	    && \max_{K_1} \; \log \left[(1-\delta)K_0 - K_1\right] + \beta \log (K_1)
+		\FF
+	\item The first-order condition with respect to $K_1$:
+		\EE
+		\frac{1}{(1-\delta)K_0 - K_1} & = & \frac{\beta}{K_1}
+		\FF
+	\item The solutions for $K_1$ and $C_1$:
+		\EE
+		K_1 & = & \frac{\beta(1-\delta)}{1+\beta}K_0
+		\FF
+	and:
+		\EE
+		C_0 & = & \frac{1-\delta}{1+\beta}K_0
+		\FF
+	\item As $\delta$ increases, $C_0$ decreases. The Euler equation implies that the household wants to smooth consumption. A higher depreciation rate reduces future consumption and so the household smooths its consumption by reducing current consumption.
+	\NE
+	
+\
+
+\item
+	\EN
+	\item In period 5, the TFP shock increases output by about 1.5\%, increases labor by about 1\%, increases consumption by about 02\%, and increases investment by about 6\%. Capital doesn't change in period 5.
+	\item The TFP shock creates a temporary increase in the marginal product of labor which means that the household gets earns more per unit of labor at the margin. Since the household is compensated at a higher rate for supplying labor, it does so.
+	\item After period 5, output descends toward the steady state. Labor and investment also descend starting in period 6, but they both overshoot the steady state and for a short time are below their initial values before returning to 0. Consumption rises for several periods before falling back toward the steady state because investment falls faster than output. The capital stock begins rising in period 6 and peaks just after period 10 before descending back toward the steady state.
+	\NE
+
+\
+
+\item 
+	
+	\EN
+	\item A marginal increase in $K_{t+1}$ reduces current utility in period $t$ by the marginal utility of consumption: $1/C_t$. Furthermore, a marginal increase in $K_{t+1}$ increases the resources available for future consumption by $\alpha A_{t+1}K_{t+1}^{\alpha-1}L_{t+1}^{1-\alpha} + 1-\delta$ and utility increases by that quantity times the marginal utility of future consumption $1/C_{t+1}$. This is all discounted back to period $t$ by $\beta$.
+	\item Summers means that during periods of economic contraction, it seems that markets allocate resources less efficiently or effectively. For example, rising unemployment represents a breakdown in the exchange mechanism because unemployed people are willing to work at the prevailing wages, but employers are not willing to hire them.
+	\NE
+	
+\
+
+\item
+	\EN
+	\item RBC and NK models are both based on models of representative households that solve intertemporal utility maximization problems and therefore both models have Euler equations.
+	\item The RBC approach presumes no link between nominal and real quantities and attributes all macroeconomic fluctuations to TFP shocks. The NK approach takes seriously the link between real and nominal quantities with the new-Keynesian Phillips curve that specifies an upward-sloping relationship between inflation and output.
+	\NE
+\NE
+\end{document}
